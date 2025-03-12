@@ -69,7 +69,7 @@ Add support for complex queries (e.g., comparisons, summarization of multiple ar
 Steps
 1.Clone the Repository
 ```
-git clone
+git clone https://github.com/LeCherry35/news_article_agent.git
 ```
 2.Install Dependencies:
 in root folder
