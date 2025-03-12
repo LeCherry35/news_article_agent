@@ -6,9 +6,13 @@ import extractContent from "./contentExtractor";
 
 dotenv.config();
 
+const qdrantUrl = process.env.QDRANT_PATH;
+const apiKey = process.env.QDRANT_API_KEY;
+
 export const qdrantClient = new QdrantClient({
-  url: process.env.QDRANT_PATH,
-  apiKey: process.env.QDRANT_API_KEY,
+  url: qdrantUrl,
+  apiKey: apiKey,
+  timeout: 30000, 
 });
 
 export const initializeQdrant = async () => {
