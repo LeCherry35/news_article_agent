@@ -111,7 +111,7 @@ or in dev mode
 npm run dev
 ```
 
-Using Docker:
+Using Docker: !In progress
 
 ```
 docker-compose up --build
