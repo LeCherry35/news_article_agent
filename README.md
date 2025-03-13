@@ -45,24 +45,24 @@ If the query contains a new link, extract and clean the content from the link us
 Use the extracted content to generate a response.
 
 ## Possible optimizations
-Caching:
-Use node-cache to cache query results and reduce latency.
-
 Chunking:
-Split large articles into smaller chunks for better retrieval accuracy.
+Split text into smaller chunks depending on token quantity to process large articles
 
-Cost/Token Optimization:
-Limit context length and use smaller models for simpler queries.
-
-Response Streaming:
-Use Server-Sent Events (SSE) to stream responses for a better user experience.
-
-Langfuse Integration:
-Monitor and debug LLM interactions using Langfuse.
+Re-ranking:
+Refine semantic search results to ensure a more relevant context for the query.
 
 Advanced Query Handling
 Implement multi-turn conversations to handle follow-up questions.
 Add support for complex queries (e.g., comparisons, summarization of multiple articles).
+
+Response Streaming:
+Use Server-Sent Events (SSE) to stream responses for a better user experience.
+
+Caching:
+Use node-cache to cache query results and reduce latency.
+
+Langfuse Integration:
+Monitor and debug LLM interactions using Langfuse.
 
 ## Setup Instructions
 
