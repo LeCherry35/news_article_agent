@@ -27,7 +27,7 @@ Accept user queries in JSON format:
 - Generate embeddings for queries using Gemini.
 - Retrieve relevant articles from Qdrant using similarity search.
 - Generate responses using Gemini and return them in the following format:
-  ```json
+```json
   {
     "answer": "An answer from LLM example",
     "sources": [
@@ -38,6 +38,7 @@ Accept user queries in JSON format:
       }
     ]
   }
+  ```
 Link Queries:
 
 If the query contains a new link, extract and clean the content from the link using Gemini and saves it to database.
@@ -65,19 +66,26 @@ Add support for complex queries (e.g., comparisons, summarization of multiple ar
 
 ## Setup Instructions
 
-### Local setup
-Steps
-1.Clone the Repository
+### Prerequisites
+
+Node.js (v18 or higher)
+
+Docker
+
+Kafka credentials
+
+Qdrant Cloud endpoint and API key (provided below)
+
+Gemini API key
+
+#### Clone the Repository
 ```
 git clone https://github.com/LeCherry35/news_article_agent.git
 ```
-2.Install Dependencies:
-in root folder
-```
-npm install
-```
-3.Set Up Environment Variables:
+
+#### Set Up Environment Variables:
 Create a .env file as in .env example and fill the following:
+
 KAFKA_BROKER=
 
 KAFKA_USERNAME=
@@ -94,12 +102,36 @@ QDRANT_API_KEY=
 
 QDRANT_PATH=
 
-4.Build 
+Existing qDrant collection can be used:
+
+ARI Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIiwiZXhwIjoxNzUwNDI0Njg5fQ.xpGtyilyN_AcLfRe2mvBhcD_yq4QNKUQfLncm3izsXI
+
+Path: https://34995261-fa0a-47ef-8f25-50bb17d8db13.eu-west-2-0.aws.cloud.qdrant.io
+
+### Docker setup
+in root folder
+```
+docker-compose up --build
+```
+
+application is running on http://localhost:3000/
+
+### Local setup
+Steps
+
+#### Install Dependencies:
+in root folder
+```
+npm install
+```
+
+
+#### Build 
 ```
 npm run build
 ```
 
-5.Run
+#### Run
 
 ```
 npm start
@@ -111,12 +143,7 @@ or in dev mode
 npm run dev
 ```
 
-Using Docker: !In progress
-
-```
-docker-compose up --build
-```
-
+application is running on http://localhost:3000/
 
 ## Test the Application:
 
@@ -129,14 +156,35 @@ Send a POST request to http://localhost:3000/agent with the following payload:
 }
 ```
 You should receive a response in the specified format.
+```json
+  {
+    "answer": "Justin Trudeau has announced he will ...",
+    "sources": [
+      {
+        "title": "Article Title 1",
+        "url": "https://…",
+        "date": "YYYY-MM-DD"
+      },
+      {
+        "title": "Article Title 2",
+        "url": "https://…",
+        "date": "YYYY-MM-DD"
+      }
+    ]
+  }
+  ```
 
 ## Technologies Used
 Backend: Node.js, Express, TypeScript
+
+Containerization: Docker, docker-compose
 
 Vector Database: Qdrant Cloud
 
 LLM Integration: Gemini API
 
 Data Ingestion: Kafka
+
+
 
 
