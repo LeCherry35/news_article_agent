@@ -1,6 +1,8 @@
 # News Article Agent
 The News Article Agent is a Node.js-based query-response application that integrates with a large language model (LLM) and uses a vector database (Qdrant) for Retrieval-Augmented Generation (RAG). It ingests news article links, extracts and cleans their content, and answers user queries based on the stored data.
 
+https://newsarticleagent-production.up.railway.app
+
 ## Features Implemented
 ### 1. Data Ingestion
 Kafka Integration:
