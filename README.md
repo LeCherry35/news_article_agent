@@ -104,9 +104,10 @@ QDRANT_PATH=
 
 Existing qDrant collection can be used:
 
-ARI Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIiwiZXhwIjoxNzUwNDI0Njg5fQ.xpGtyilyN_AcLfRe2mvBhcD_yq4QNKUQfLncm3izsXI
+### !New qdrant credentials! ###
+ARI Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.xSB4CflpUELEk9nndzoFT-9egm_IGkzux68CmEAaSjk
 
-Path: https://34995261-fa0a-47ef-8f25-50bb17d8db13.eu-west-2-0.aws.cloud.qdrant.io
+Path: https://4cb65906-e67c-4fda-b4ba-cf2cdb94c4ea.us-west-2-0.aws.cloud.qdrant.io/
 
 ### Docker setup
 in root folder
